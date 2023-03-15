@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Image Gallery</title>
+    <style>
+      .image-container {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .image-container img {
+        max-width: 200px;
+        max-height: 200px;
+        display: block;
+        margin: 0 auto;
+      }
+      .image-container p {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .login-form {
+        margin: 50px auto;
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .login-form label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .login-form input[type="text"],
+      .login-form input[type="password"] {
+        width: 100%;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+      }
+      .login-form input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Gallery</h1>
+    {% for image in image_data %}
+    <div class="image-container">
+      <img src="{{ image.image_path }}">
+      {% set lines = image.text_data.split('\n') %}
+      <p> {{ lines[0] }}</p>
+      <p>{{ lines[1] }}</p>
+      <p>{{ lines[2] }}</p>
+    </div>
+    {% endfor %}
+  </body>
+</html>
