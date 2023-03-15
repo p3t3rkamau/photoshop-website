@@ -1,0 +1,19 @@
+{   "version": 2,
+    "builds": [
+      {
+        "src": "index.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.py" }
+    ],
+    "env": {
+      "FLASK_ENV": "production"
+    },
+    "files": [
+      "static/**/*",
+      "templates/**/*"
+    ]
+  }
