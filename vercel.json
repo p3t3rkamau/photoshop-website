@@ -6,7 +6,7 @@
     }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/static/(.*)", "dest": "/static/" },
     { "src": "/(.*)", "dest": "/index.py" }
   ],
   "env": {
